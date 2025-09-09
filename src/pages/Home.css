@@ -22,3 +22,14 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.ad-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
