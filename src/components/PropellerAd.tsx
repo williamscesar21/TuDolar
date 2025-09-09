@@ -1,23 +1,24 @@
-import React, { useEffect } from "react";
+// PropellerAd.tsx
+import { useEffect } from "react";
 
 const PropellerAd: React.FC = () => {
   useEffect(() => {
+    // Crear el script
     const script = document.createElement("script");
+    script.dataset.zone = "9846385"; // tu zone ID
+    script.src = "https://groleegni.net/vignette.min.js";
+    script.async = true;
 
-    // Esto reemplaza lo que te dieron
-    script.innerHTML = `(function(s){
-      s.dataset.zone='9846385',
-      s.src='https://groleegni.net/vignette.min.js'
-    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`;
-
+    // Agregarlo al body
     document.body.appendChild(script);
 
+    // Limpiar cuando el componente se desmonte
     return () => {
       document.body.removeChild(script);
     };
   }, []);
 
-  return <div className="ad-bottom" />; // div para colocar el anuncio
+  return null; // no necesitamos renderizar nada
 };
 
 export default PropellerAd;
