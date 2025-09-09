@@ -1,0 +1,28 @@
+.btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #00bfa6, #00ffc1);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.btn.disabled {
+  background: #424242;
+  color: #b0b0b0;
+  cursor: not-allowed;
+  box-shadow: none;
+}

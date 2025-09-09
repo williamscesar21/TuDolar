@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ahorro-ve</string>
+    <string name="title_activity_main">ahorro-ve</string>
+    <string name="package_name">com.tuempresa.ahorrove</string>
+    <string name="custom_url_scheme">com.tuempresa.ahorrove</string>
+</resources>

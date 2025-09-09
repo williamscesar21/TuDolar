@@ -1,0 +1,29 @@
+.input-field {
+  width: 90%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #424242;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: #00bfa6;
+  box-shadow: 0 0 8px #00bfa6;
+  outline: none;
+}
+
+.input-field.error {
+  border-color: #ff5252;
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
