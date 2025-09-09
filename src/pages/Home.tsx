@@ -1,7 +1,7 @@
 import React from "react";
 import CurrencyConverter from "../components/CurrencyConverter";
-import "./Home.css";
 import PropellerAd from "../components/PropellerAd";
+import "./Home.css";
 
 const Home: React.FC = () => {
   return (
@@ -12,10 +12,22 @@ const Home: React.FC = () => {
         alt=""
       />
       <CurrencyConverter />
-      <div className="ad-bottom">
+      
+      {/* Banner Propeller fijo abajo */}
+      <div
+        className="ad-bottom"
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          zIndex: 9999,
+          backgroundColor: "#f5f5f5", // opcional
+          padding: "5px 0",
+        }}
+      >
         <PropellerAd />
       </div>
-
     </div>
   );
 };

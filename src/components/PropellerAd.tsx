@@ -1,24 +1,37 @@
-// PropellerAd.tsx
-import { useEffect } from "react";
+// src/components/PropellerAd.tsx
+import React, { useEffect } from "react";
 
-const PropellerAd: React.FC = () => {
+interface PropellerAdProps {
+  zoneId?: string; // opcional, por si quieres cambiar el banner desde props
+}
+
+const PropellerAd: React.FC<PropellerAdProps> = ({ zoneId = "9846468" }) => {
   useEffect(() => {
-    // Crear el script
     const script = document.createElement("script");
-    script.dataset.zone = "9846385"; // tu zone ID
     script.src = "https://groleegni.net/vignette.min.js";
+    script.dataset.zone = zoneId;
     script.async = true;
 
-    // Agregarlo al body
-    document.body.appendChild(script);
+    const container = document.getElementById("propeller-ad-container");
+    if (container) {
+      container.innerHTML = ""; // limpiar cualquier script anterior
+      container.appendChild(script);
+    }
 
-    // Limpiar cuando el componente se desmonte
     return () => {
-      document.body.removeChild(script);
+      if (container) container.innerHTML = ""; // limpiar al desmontar
     };
-  }, []);
+  }, [zoneId]);
 
-  return null; // no necesitamos renderizar nada
+  return (
+    <div
+      id="propeller-ad-container"
+      style={{
+        width: "100%",
+        textAlign: "center",
+      }}
+    />
+  );
 };
 
 export default PropellerAd;
